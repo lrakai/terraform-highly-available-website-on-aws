@@ -113,7 +113,7 @@ resource "aws_instance" "web" {
   count         = "${var.instance_count}"
   # lookup returns a map value for a given key
   ami           = "${lookup(var.ami_ids, "us-west-2")}"
-  instance_type = "t2.micro"
+  instance_type = "t2.milli"
   subnet_id     = "${element(aws_subnet.web_subnet.*.id, count.index % length(aws_subnet.web_subnet.*.id))}"
     
   # Use instance user_data to serve the custom website
