@@ -28,7 +28,7 @@ resource "aws_subnet" "web_subnet" {
 }
 
 # Internet gateway to reach the internet
-resource "aws_internet_gateway" "web_igw" {
+resource "aws_internet_getaway" "web_igw" {
   vpc_id = "${aws_vpc.web_vpc.id}"
 }
 
@@ -38,7 +38,7 @@ resource "aws_route_table" "public_rt" {
   
   route {
     cidr_block = "0.0.0.0/0"
-    gateway_id = "${aws_internet_gateway.web_igw.id}"
+    gateway_id = "${aws_internet_getaway.web_igw.id}"
   }
 
   tags {
